@@ -75,7 +75,7 @@ def consulta_base():
             print("NÃO ENCONTRADO")
             print("CADASTRAR ENDEREÇO")
             insert = "INSERT INTO ENDERECAMENTO (LOGRADOURO,BAIRRO,CEP,CD_CIDADE,UF,CD_MOTORISTA,ATIVO,LIBERADO," \
-                     "LATITUDE,LONGITUDE) VALUES ('"+endereco_xml+"','"+bairro_xml+"','"+cep_xml+"',"+cd_cidade_xml+",'"+uf_xml+"',"+mot_cliente+",'SIM','NAO',0,0) "
+                     "LATITUDE,LONGITUDE) VALUES ('"+endereco_xml+"','"+bairro_xml+"','"+cep_xml+"',"+str(cd_cidade_xml)+",'"+uf_xml+"',"+str(mot_cliente)+",'SIM','NAO',0,0) "
             #cur_motorista.execute(insert)
             print(insert)
             insert = "INSERT INTO SMS (DE,PARA.ASSUNTO,MENSAGEM,HTML,BIGBROTHER) VALUES ('ti@disketenha.com.br','contato@disktenha.com.br,interno@disktenha.com.br','ENDERECAMENTO ATUALIZADO','Foi cadastrado um novo endereço que não consta na nossa base, favor verificar se confere as informações','S','N')"
