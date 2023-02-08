@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 import fdb
-# from gevent.pywsgi import WSGIServer
 
 con = fdb.connect(dsn='177.70.10.106/3050:d:\_dados\DISKTENHADB.fdb', user='SYSDBA', password='disk@db!FiReOlD')
 cur_cliente = con.cursor()
@@ -10,10 +9,6 @@ app = Flask(__name__)
 
 @app.route('/api/consulta_base', methods = {'POST'})
 def consulta_base():
-    # if(request.remote_addr != '177.70.10.106'):
-    #     return "Não permitido"
-    #     exit()
-
     content = request.json
     cnpj_xml = content['cnpj']
     endereco_xml = content['endereco']
@@ -138,5 +133,3 @@ def consulta_base():
     print(retorno)
     return retorno
 app.run()
-# http_server = WSGIServer(('127.0.0.1', 5000), app)
-# http_server.serve_forever()
